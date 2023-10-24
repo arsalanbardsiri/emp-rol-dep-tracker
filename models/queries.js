@@ -72,7 +72,77 @@ module.exports = {
             if (err) throw err;
             callback(res);
         });
-    }
+    },
 
-    // Additional functions for other CRUD operations and bonus features can be added as needed.
+    updateEmployeeManager: function(employeeId, newManagerId, callback) {
+        const query = 'UPDATE employee SET manager_id = ? WHERE id = ?';
+        connection.query(query, [newManagerId, employeeId], function(err, res) {
+            if (err) throw err;
+            callback(res);
+        });
+    },
+
+    // 9. View employees by a specific manager
+    viewEmployeesByManager: function(managerId, callback) {
+        const query = 'SELECT * FROM employee WHERE manager_id = ?';
+        connection.query(query, [managerId], function(err, res) {
+            if (err) throw err;
+            callback(res);
+        });
+    },
+
+    // 10. View employees by department
+    viewEmployeesByDepartment: function(departmentId, callback) {
+        const query = `
+            SELECT employee.* 
+            FROM employee 
+            LEFT JOIN role ON employee.role_id = role.id
+            WHERE role.department_id = ?
+        `;
+        connection.query(query, [departmentId], function(err, res) {
+            if (err) throw err;
+            callback(res);
+        });
+    },
+
+    // 11. Delete a department
+    deleteDepartment: function(departmentId, callback) {
+        const query = 'DELETE FROM department WHERE id = ?';
+        connection.query(query, [departmentId], function(err, res) {
+            if (err) throw err;
+            callback(res);
+        });
+    },
+
+    // 12. Delete a role
+    deleteRole: function(roleId, callback) {
+        const query = 'DELETE FROM role WHERE id = ?';
+        connection.query(query, [roleId], function(err, res) {
+            if (err) throw err;
+            callback(res);
+        });
+    },
+
+    // 13. Delete an employee
+    deleteEmployee: function(employeeId, callback) {
+        const query = 'DELETE FROM employee WHERE id = ?';
+        connection.query(query, [employeeId], function(err, res) {
+            if (err) throw err;
+            callback(res);
+        });
+    },
+
+    // 14. View the total utilized budget of a department (combined salaries of all employees in that department)
+    viewDepartmentBudget: function(departmentId, callback) {
+        const query = `
+            SELECT SUM(role.salary) AS total_budget 
+            FROM employee 
+            LEFT JOIN role ON employee.role_id = role.id
+            WHERE role.department_id = ?
+        `;
+        connection.query(query, [departmentId], function(err, res) {
+            if (err) throw err;
+            callback(res);
+        });
+    }
 };

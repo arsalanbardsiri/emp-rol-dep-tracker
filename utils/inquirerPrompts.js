@@ -109,7 +109,7 @@ const mainMenu = async () => {
             break;
 
         case 'Update an Employee Role':
-            // Note: For simplicity, we're directly prompting for employee_id and newRole_id. In a real-world scenario, you'd provide lists of employees and roles to choose from.
+            // Note: For simplicity, we're directly prompting for employee_id and newRole_id.
             const { employeeId, newRoleId } = await inquirer.prompt([
                 {
                     name: 'employeeId',
