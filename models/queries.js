@@ -6,7 +6,11 @@ module.exports = {
     viewAllDepartments: function(callback) {
         const query = 'SELECT * FROM department';
         connection.query(query, function(err, res) {
-            if (err) throw err;
+            if (err) {
+                console.error("Error fetching departments:", err);
+                callback(null, "Error fetching departments. Please try again.");
+                return;
+            }
             callback(res);
         });
     },
