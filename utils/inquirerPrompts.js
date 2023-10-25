@@ -53,7 +53,6 @@ const mainMenu = async () => {
             break;
 
         case 'Add a Role':
-            // Note: For simplicity, we're directly prompting for the department_id. In a real-world scenario, you'd first list departments for the user to choose from.
             const { roleTitle, roleSalary, departmentId } = await inquirer.prompt([
                 {
                     name: 'roleTitle',
@@ -78,7 +77,6 @@ const mainMenu = async () => {
             break;
 
         case 'Add an Employee':
-            // Note: Similar to the addRole prompt, we're directly prompting for role_id and manager_id. In a real-world scenario, you'd provide lists to choose from.
             const { firstName, lastName, roleId, managerId } = await inquirer.prompt([
                 {
                     name: 'firstName',
@@ -99,7 +97,8 @@ const mainMenu = async () => {
                     name: 'managerId',
                     type: 'input',
                     message: 'What is the manager ID for this employee? (Leave empty if no manager)',
-                    default: null
+                    default: null,
+                    filter: input => (input === 'NULL' || input === '') ? null : input
                 }
             ]);
             queries.addEmployee(firstName, lastName, roleId, managerId, function() {
@@ -109,7 +108,6 @@ const mainMenu = async () => {
             break;
 
         case 'Update an Employee Role':
-            // Note: For simplicity, we're directly prompting for employee_id and newRole_id.
             const { employeeId, newRoleId } = await inquirer.prompt([
                 {
                     name: 'employeeId',
