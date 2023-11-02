@@ -44,8 +44,8 @@ The Emp-Rol-Dep Tracker  is a command-line application designed to simplify the 
 
 To set up the Emp-Rol-Dep Tracker :
 
-1. Clone this repository: `git clone https://github.com/username/Employee-Tracker-.git`
-2. Navigate to the project directory: `cd Employee-Tracker-`
+1. Clone this repository: `git clone https://github.com/arsalanbardsiri/emp-rol-dep-tracker.git`
+2. Navigate to the project directory: `cd emp-rol-dep-tracker`
 3. Install necessary dependencies: `npm install`
 4. Set up the MySQL database using the provided schema and seed files.
 
