@@ -2,7 +2,6 @@
 
 Manage and organize your company's departments, roles, and employees effortlessly with the Emp-Rol-Dep Tracker .
 
-![Emp-Rol-Dep Tracker  Screenshot](./assets/imgs/preview.png)
 
 ## Table of Contents
 
@@ -15,7 +14,6 @@ Manage and organize your company's departments, roles, and employees effortlessl
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Demo](#demo)
 - [Contributors](#contributors)
 - [Contact](#contact)
 - [License](#license)
@@ -65,11 +63,6 @@ Emp-Rol-Dep Tracker  is powered by:
 - ![MySQL](https://img.shields.io/badge/MySQL-blue?style=for-the-badge&logo=mysql)
 - ![Inquirer.js](https://img.shields.io/badge/Inquirer.js-cyan?style=for-the-badge&logo=inquirer)
 
-## Demo
-
-Experience the versatility and efficiency of the Emp-Rol-Dep Tracker :
-
-![Emp-Rol-Dep Tracker  Demo](./assets/imgs/demo.gif)
 
 ## Contributors
 
